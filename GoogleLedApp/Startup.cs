@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using GoogleLedApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace GoogleLedApp
 {
@@ -31,6 +33,11 @@ namespace GoogleLedApp
             // Add framework services.
             services.AddMvc();
             services.AddGoogleTrace(GetProjectId());
+
+            var connection = @"Data Source = (localdb)\ProjectsV13; Initial Catalog = GoogleLedApp; Integrated Security = True; Connect Timeout = 30;";
+            services.AddDbContext<GoogleLedAppContext>(options => options.UseSqlServer(connection));
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
