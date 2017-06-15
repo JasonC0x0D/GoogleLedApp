@@ -69,7 +69,7 @@ namespace GoogleLedApp
         private string GetProjectId()
         {
             string projectId = Configuration["ProjectId"];
-            if (projectId == ("YOUR-PROJECT-ID"))
+            if (projectId == ("inner-precept-169820"))
             {
                 throw new Exception("Update appsettings.json and replace YOUR-PROJECT-ID"
                     + " with your Google Cloud Project ID, and recompile.");

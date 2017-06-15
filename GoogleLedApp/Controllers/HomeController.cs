@@ -31,5 +31,10 @@ namespace GoogleLedApp.Controllers
         {
             return View();
         }
+
+        public string Arduino()
+        {
+            return "status:blue";
+        }
     }
 }
